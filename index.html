@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myfirstangularapp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS </title>
+    <link data-require="bootstrap@*" data-semver="3.3.2" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <script data-require="bootstrap@*" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controllers.js"></script>
+    <script src="app/filters/filters.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/directives/directives.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div ng-controller="MyFirstController">
+        <p class="text-muted">
+            1. Lower case filter:</p>
+        <p class="text-info">First Name : {{data.firstName | lowercase}}</p>
+        <hr />
+        <p class="text-muted">
+            2. Upper case filter</p>
+        <p class="text-info">First Name : {{data.firstName | uppercase }}</p>
+        <hr />
+        <p class="text-muted">
+            3. Date filter: (mm)</p>
+        <p class="text-info">Start Month : {{data.startDate | date:'MM'}}
+        </p>
+        <hr />
+        <div>
+            <img ng-src="{{getGravatar(data.email)}}" />
+        </div>
+        <hr/>
+        <div>
+            <my-input/>
+            <label>Github return code:
+                <h4 ng-bind="status"></h4>
+            </label>
+        </div>
+        <div>
+            <pre>{{user | json}}</pre>
+            {{error}}
+        </div>
+    </div>
+</div>
+</body>
+</html>
