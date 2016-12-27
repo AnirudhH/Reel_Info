@@ -18,19 +18,48 @@ app.factory('userData', function() {
 
 app.factory('footballTeam', function($http) {
     return {
-        lookupUser: function(user) {
-            console.log('Looking up user: ' + user);
-            return $http({method : 'GET',url : 'http://api.football-data.org/v1/teams/?name='+ user, headers: { 'X-Auth-Token':'44b92586918744789de86cc81ba0ac89'}})
-                .then(function(response) {
-                    console.log(response);
-                    return response;
-
-                    },
-                    // error handler
-                    function(response) {
-                        return response;
+        lookupUser: function () {
+          return   $http({
+                method: 'GET',
+                url: 'https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/premier-league/seasons/16-17/teams',
+                headers: {'X-Mashape-Key': 'zuB7h9FNEFmshebL2GJx7x5G627Lp1RumnbjsnPuI3JAcbbTv8'}
+            }).then(function (response) {
+                        console.log(response.data);
+                        // $scope.league = response.data;
+                        return response.data;
                     });
+        },
+        jello: function () {
+           return  $http({
+                method: 'GET',
+                url: 'https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/premier-league/seasons/16-17/standings',
+                headers: {'X-Mashape-Key': 'zuB7h9FNEFmshebL2GJx7x5G627Lp1RumnbjsnPuI3JAcbbTv8'}
+            }).then(function (response) {
+                    console.log(response.data);
+                    return response.data;
+                });
+        },
+        jello: function () {
+            return  $http({
+                method: 'GET',
+                url: 'https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/premier-league/seasons/16-17/standings',
+                headers: {'X-Mashape-Key': 'zuB7h9FNEFmshebL2GJx7x5G627Lp1RumnbjsnPuI3JAcbbTv8'}
+            }).then(function (response) {
+                console.log(response.data);
+                return response.data;
+            });
         }
     }
 });
+//
+// app.factory('footballTable', function($http,$scope) {
+//     this.jello = function () {
+//         $http.get({url : 'https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/premier-league/seasons/16-17/standings', headers: { 'X-Mashape-Key': 'zuB7h9FNEFmshebL2GJx7x5G627Lp1RumnbjsnPuI3JAcbbTv8'}})
+//                 .then(function(response) {
+//                     console.log(response);
+//                     $scope.table = response;
+//                     });
+//         }
+//     });
+
 

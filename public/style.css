@@ -23,3 +23,13 @@ body{
     padding-right: 15px;
     padding-left: 15px;
 }
+.panel{
+    padding: 15px;
+
+}
+
+.search-bar {
+    width:100%;
+    max-width:250px;
+    margin-top: 10px;
+}

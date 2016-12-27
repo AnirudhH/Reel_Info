@@ -3,6 +3,6 @@
  */
 app.directive('myInput', function() {
     return {
-        template: "<label>Team:<input type='text' ng-model='teamname'></label><button ng-click='getItems(teamname)'>GO</button>"
+        template: "<label><input type='text' ng-model='teamname' placeholder='enter the team name'></label><button ng-click='getItems(teamname)'>GO</button>"
     };
 });

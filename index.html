@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>AngularJS </title>
     <link rel="stylesheet" href="public/style.css">
-    <link data-require="bootstrap@*" data-semver="3.3.2" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/bootstrap.css">
     <script data-require="bootstrap@*" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script>
         document.write('<base href="' + document.location + '" />');
@@ -16,153 +16,151 @@
     <script src="app/filters/filters.js"></script>
     <script src="app/services/services.js"></script>
     <script src="app/directives/directives.js"></script>
+    <!--<script src="public/ui-bootstrap.min.js"></script>-->
 </head>
-
 <body>
-<header class="navbar navbar-default navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand visible-xs" href="#">UI Bootstrap</a>
+<div ng-controller="MyFirstController" >
+    <header class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand visible-xs" href="#">UI Bootstrap</a>
+                </div>
+                <nav class="hidden-xs">
+                    <ul class="nav navbar-nav">
+                        <a href="#" role="button" class="navbar-brand">Home</a>
+                        <a href="#standings" class="navbar-brand">Table</a>
+                        <a href="#team-names" role="button" class="navbar-brand">Teams</a>
+                        <a href="#" role="button" class="navbar-brand">Fixtures</a>
+                    </ul>
+                    <div style="float: right;padding-top: 10px" >
+                    <my-input/>
+                    </div>
+                </nav>
+                <nav class="visible-xs" collapse="!isCollapsed">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#getting_started" ng-click="isCollapsed = !isCollapsed">Getting started</a></li>
+                        <li><a href="#directives_small" ng-click="isCollapsed = !isCollapsed">Directives</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="hidden-xs">
-                <ul class="nav navbar-nav">
-                    <a href="#" role="button" class="navbar-brand">
-                        Home
-                    </a>
-                    <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle">
-                            Directives <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#accordion">Accordion</a></li><li><a href="#alert">Alert</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#carousel">Carousel</a></li><li><a href="#collapse">Collapse</a></li><li><a href="#datepicker">Datepicker</a></li><li><a href="#dropdownToggle">Dropdown Toggle</a></li><li><a href="#modal">Modal</a></li><li><a href="#pagination">Pagination</a></li><li><a href="#popover">Popover</a></li><li><a href="#progressbar">Progressbar</a></li><li><a href="#rating">Rating</a></li><li><a href="#tabs">Tabs</a></li><li><a href="#timepicker">Timepicker</a></li><li><a href="#tooltip">Tooltip</a></li><li><a href="#typeahead">Typeahead</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#related-results">testing</a></li>
-                </ul>
-            </nav>
-            <nav class="visible-xs" collapse="!isCollapsed">
-                <ul class="nav navbar-nav">
-                    <li><a href="#getting_started" ng-click="isCollapsed = !isCollapsed">Getting started</a></li>
-                    <li><a href="#directives_small" ng-click="isCollapsed = !isCollapsed">Directives</a></li>
-                </ul>
-            </nav>
         </div>
-    </div>
-</header>
-<div class="container">
-    <div ng-controller="MyFirstController">
+    </header>
+    <noscript>
+    <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.</div>
+</noscript>
+
+<div class="container-fluid" style="padding-top: 100px">
+    <div class="row col-md-12">
+    <div class="panel col-md-8">
         <p class="text-muted">
             1. Lower case filter:</p>
-        <p class="text-info">First Name : {{data.firstName | lowercase}}</p>
-        <hr />
-        <p class="text-muted">
-            2. Upper case filter</p>
-        <p class="text-info">First Name : {{data.firstName | uppercase }}</p>
-        <hr />
-        <p class="text-muted">
-            3. Date filter: (mm)</p>
-        <p class="text-info">Start Month : {{data.dob | date:'dd-MM-yyyy'}}
-        </p>
-        12 Years
-        Someone, probably Kristine, touched my arm
-        and said, take a break boss. I stepped aside
-        and they bent to the debris cascading
-        toward the yawning mouth of the box van.
-        Crumbling sheet-rock, splintered baseboard, swollen
-        press-board, warped cabinets, warped panels,
-        the sopping worthless bits of homes we’d wrenched
-        free and piled as in a mass grave
-        (for a hard freeze’s broken pipes pour out
-        more water than you can believe),
-        they now scraped and tossed over their shoulders,
-        our newest additions to the landfill.
-        I leaned on the van’s metal wall
-        and I stared at the sheeting rain.
-        Unfocused eyes, bruised ribs, cut hands, aching shins,
-        all recent reminders of the last
-        twelve years.
-        Then I heard it.
-        I heard it.
-        A sound so pure it was proverbial.
-        I focused beyond me,
-        the leveled staging of eclectic castoffs.
-        Beyond, the yellow tractors weeping,
-        their spiked treads a slick shine.
-        Beyond, the landfill in steep descent
-        to a bilge-like drool
-        from a desecrated mouth
-        (when I was a child
-        we drove trash down a canyon,
-        now we drive it up a mountain).
-        Beyond, the valley dark-drenched in green,
-        a near horizon marked by grey tendrils of cloud.
-        There was no rushing water.
-        Only rain.
-        But I heard it.
-        Was overwhelmed in the hearing of it.
-        A fierce metal squeal assaulted me
-        followed by, goddamn nails no one pulled,
-        and a, hush, and sidelong glances
-        at their quiet foreman who never swore,
-        yet my addled sense would not retract.
-        I leaned out past the opening.
-        Now I saw rising, tall and black,
-        knife-edge spine of the mountain’s arched back
-        covered in plastic.
-        And rain fell on the long dark sheets
-        the sound of many-thousand-pellets
-        slapping at once and continuous.
-        And water ran in long crooked rivulets
-        the sound of many-thousand-rivers
-        rushing each a steep gorge.
-        And the sounds together were one, a constant
-        intoned without restraint, ebb, or arc.
-        I leaned back into the van
-        where metal walls that cubed
-        the chaos of disaster
-        were an echo chamber drowning out
-        the struggle, the cursing, the days, the years.
-        I heard it,
-        and the hearing of it
-        went over my head like breakers.
-        I leaned out again.
-        Rain struck again my matted hair
-        and tumbled drop over drop
-        down crinkled furrows of forehead.
-        How could this be?
-        How is it beauty lands in a dump
-        and raises praise with a song?
-        I retreated back under cover.
-        I had no answer, and at long last
-        I needed none.
-        So I rested my head
-        against the metal, closed my eyes
-        and listened.
-        <hr />
-        <div>
-            <my-input/>
-            <label>Github return code:
-                <h4 ng-bind="status"></h4>
-            </label>
-        </div>
-        <div>
-            {{user.teams[0].id}}
-            {{user.teams[0].name}}
-            {{teams.name}}
-            <pre>{{user | json}}</pre>
-            {{error}}
-        </div>
-    </div>
-    <div id="related-results" ng-include="'partials/testing.html'" class="col-md-4 related-results"></div>
 
+        <p class="text-info">First Name : {{dat.firstName | lowercase}}</p>
+        <hr />
+
+            <p class="text-muted">
+                2. Upper case filter</p>
+            <p class="text-info">First Name : {{dat.firstName | uppercase }}</p>
+
+        <hr />
+          <p class="text-muted">
+                3. Date filter: (mm)</p>
+            <p class="text-info">Start Month : {{dat.dob | date:'dd-MM-yyyy'}}
+            </p>
+            12 Years
+            Someone, probably Kristine, touched my arm
+            and said, take a break boss. I stepped aside
+            and they bent to the debris cascading
+            toward the yawning mouth of the box van.
+            Crumbling sheet-rock, splintered baseboard, swollen
+            press-board, warped cabinets, warped panels,
+            the sopping worthless bits of homes we’d wrenched
+            free and piled as in a mass grave
+            (for a hard freeze’s broken pipes pour out
+            more water than you can believe),
+            they now scraped and tossed over their shoulders,
+            our newest additions to the landfill.
+            I leaned on the van’s metal wall
+            and I stared at the sheeting rain.
+            Unfocused eyes, bruised ribs, cut hands, aching shins,
+            all recent reminders of the last
+            twelve years.
+            Then I heard it.
+            I heard it.
+            A sound so pure it was proverbial.
+            I focused beyond me,
+            the leveled staging of eclectic castoffs.
+            Beyond, the yellow tractors weeping,
+            their spiked treads a slick shine.
+            Beyond, the landfill in steep descent
+            to a bilge-like drool
+            from a desecrated mouth
+            (when I was a child
+            we drove trash down a canyon,
+            now we drive it up a mountain).
+            Beyond, the valley dark-drenched in green,
+            a near horizon marked by grey tendrils of cloud.
+            There was no rushing water.
+            Only rain.
+            But I heard it.
+            Was overwhelmed in the hearing of it.
+            A fierce metal squeal assaulted me
+            followed by, goddamn nails no one pulled,
+            and a, hush, and sidelong glances
+            at their quiet foreman who never swore,
+            yet my addled sense would not retract.
+            I leaned out past the opening.
+            Now I saw rising, tall and black,
+            knife-edge spine of the mountain’s arched back
+            covered in plastic.
+            And rain fell on the long dark sheets
+            the sound of many-thousand-pellets
+            slapping at once and continuous.
+            And water ran in long crooked rivulets
+            the sound of many-thousand-rivers
+            rushing each a steep gorge.
+            And the sounds together were one, a constant
+            intoned without restraint, ebb, or arc.
+            I leaned back into the van
+            where metal walls that cubed
+            the chaos of disaster
+            were an echo chamber drowning out
+            the struggle, the cursing, the days, the years.
+            I heard it,
+            and the hearing of it
+            went over my head like breakers.
+            I leaned out again.
+            Rain struck again my matted hair
+            and tumbled drop over drop
+            down crinkled furrows of forehead.
+            How could this be?
+            How is it beauty lands in a dump
+            and raises praise with a song?
+            I retreated back under cover.
+            I had no answer, and at long last
+            I needed none.
+            So I rested my head
+            against the metal, closed my eyes
+            and listened.
+    </div>
+        <div class="panel col-md-3" style="margin-left: 10px">
+            <!--<pre>{{user | json}}</pre>-->
+            <!--{{error}}-->
+        </div>
+
+        <hr />
+    <div id="standings" ng-include="'partials/standings.html'" class="panel col-md-8 related-results"></div>
+        <div id="team-names" ng-include="'partials/team-names.html'" class="panel col-md-8 related-results"></div>
+        </div>
 </div>
 <!--<div id="related-results" ng-include="'partials/testing.html'" class="col-md-4 animated bounce related-results"></div>-->
+</div>
 </body>
 </html>
