@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myfirstangularapp">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -7,168 +7,35 @@
     <link rel="stylesheet" href="public/style.css">
     <link rel="stylesheet" href="public/bootstrap.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script>
-        document.write('<base href="' + document.location + '" />');
-    </script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/route.js"></script>
     <script src="app/controllers/controllers.js"></script>
+    <script src="app/controllers/latest.js"></script>
+    <script src="app/controllers/popular.js"></script>
+    <script src="app/controllers/upcoming.js"></script>
     <script src="app/filters/filters.js"></script>
     <script src="app/services/services.js"></script>
     <script src="app/directives/directives.js"></script>
     <!--<script src="public/ui-bootstrap.min.js"></script>-->
 </head>
-<body>
-<div ng-controller="MyFirstController" >
-    <header class="navbar navbar-default navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand visible-xs" href="#">Hollywood Reel Show</a>
-                </div>
-                <nav class="hidden-xs">
-                    <ul class="nav navbar-nav">
-                        <a href="#" role="button" class="navbar-brand">Home</a>
-                        <a href="#popular" class="navbar-brand">Popular Movies</a>
-                        <a href="#latest" role="button" class="navbar-brand">Latest Movies</a>
-                        <a href="#upcoming" role="button" class="navbar-brand">Upcoming Movies</a>
-                    </ul>
-                    <div style="float: right;padding-top: 10px" >
-                    <my-input/>
-                    </div>
-                </nav>
-                <nav class="visible-xs" collapse="!isCollapsed">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#getting_started" ng-click="isCollapsed = !isCollapsed">Getting started</a></li>
-                        <li><a href="#directives_small" ng-click="isCollapsed = !isCollapsed">Directives</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <noscript>
-    <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.</div>
-</noscript>
-
-<div class="container-fluid" style="padding-top: 100px">
-    <div class="row col-md-12">
-    <div class="panel col-md-8">
-        <p class="text-muted">
-            1. Lower case filter:</p>
-
-        <p class="text-info">First Name : {{dat.firstName | lowercase}}</p>
-        <hr />
-
-            <p class="text-muted">
-                2. Upper case filter</p>
-            <p class="text-info">First Name : {{dat.firstName | uppercase }}</p>
-
-        <hr />
-          <p class="text-muted">
-                3. Date filter: (mm)</p>
-            <p class="text-info">Start Month : {{dat.dob | date:'dd-MM-yyyy'}}
-            </p>
-            12 Years
-            Someone, probably Kristine, touched my arm
-            and said, take a break boss. I stepped aside
-            and they bent to the debris cascading
-            toward the yawning mouth of the box van.
-            Crumbling sheet-rock, splintered baseboard, swollen
-            press-board, warped cabinets, warped panels,
-            the sopping worthless bits of homes we’d wrenched
-            free and piled as in a mass grave
-            (for a hard freeze’s broken pipes pour out
-            more water than you can believe),
-            they now scraped and tossed over their shoulders,
-            our newest additions to the landfill.
-            I leaned on the van’s metal wall
-            and I stared at the sheeting rain.
-            Unfocused eyes, bruised ribs, cut hands, aching shins,
-            all recent reminders of the last
-            twelve years.
-            Then I heard it.
-            I heard it.
-            A sound so pure it was proverbial.
-            I focused beyond me,
-            the leveled staging of eclectic castoffs.
-            Beyond, the yellow tractors weeping,
-            their spiked treads a slick shine.
-            Beyond, the landfill in steep descent
-            to a bilge-like drool
-            from a desecrated mouth
-            (when I was a child
-            we drove trash down a canyon,
-            now we drive it up a mountain).
-            Beyond, the valley dark-drenched in green,
-            a near horizon marked by grey tendrils of cloud.
-            There was no rushing water.
-            Only rain.
-            But I heard it.
-            Was overwhelmed in the hearing of it.
-            A fierce metal squeal assaulted me
-            followed by, goddamn nails no one pulled,
-            and a, hush, and sidelong glances
-            at their quiet foreman who never swore,
-            yet my addled sense would not retract.
-            I leaned out past the opening.
-            Now I saw rising, tall and black,
-            knife-edge spine of the mountain’s arched back
-            covered in plastic.
-            And rain fell on the long dark sheets
-            the sound of many-thousand-pellets
-            slapping at once and continuous.
-            And water ran in long crooked rivulets
-            the sound of many-thousand-rivers
-            rushing each a steep gorge.
-            And the sounds together were one, a constant
-            intoned without restraint, ebb, or arc.
-            I leaned back into the van
-            where metal walls that cubed
-            the chaos of disaster
-            were an echo chamber drowning out
-            the struggle, the cursing, the days, the years.
-            I heard it,
-            and the hearing of it
-            went over my head like breakers.
-            I leaned out again.
-            Rain struck again my matted hair
-            and tumbled drop over drop
-            down crinkled furrows of forehead.
-            How could this be?
-            How is it beauty lands in a dump
-            and raises praise with a song?
-            I retreated back under cover.
-            I had no answer, and at long last
-            I needed none.
-            So I rested my head
-            against the metal, closed my eyes
-            and listened.
+<body  ng-app="angularApp">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home">Reel Info</a>
     </div>
-        <hr />
-        <div class="btn-group btn-group-justified">
-            <a class="btn btn-default" ng-class="{'btn-success': hover.left, 'btn-danger': hover.right}" ng-click="setMatch(-1)" role="button" ng-mouseenter="hover.left = true;" ng-mouseleave="hover.left = false;">
-                <i class="fa fa-thumbs-o-up fa-5x pull-left" ng-class="{'fa-rotate-90': !hover.left && !hover.right, 'fa-flip-vertical': hover.right}"></i>
-                {{ song.name }}
-            </a>
-            <a class="btn btn-default" ng-class="{'btn-success': hover.right, 'btn-danger': hover.left}" ng-click="setMatch(1)" role="button" ng-mouseenter="hover.right = true;" ng-mouseleave="hover.right = false;">
-                <i class="fa fa-thumbs-o-up fa-5x pull-right" ng-class="{'fa-rotate-270': !hover.left && !hover.right, 'fa-flip-vertical': hover.left}"></i>
-                {{ match.name }}
-            </a>
-        </div>
-    </div>
-
-
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="popular">Popular</a></li>
+        <li><a ui-sref="latest">Latest</a></li>
+        <li><a ui-sref="upcoming">Upcoming </a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div ui-view></div>
 </div>
 <!--<div id="related-results" ng-include="'partials/testing.html'" class="col-md-4 animated bounce related-results"></div>-->
-    <div id="popular" ng-include="'partials/popular.html'" class=" col-md-6 related-results"></div>
-    <div id="latest" ng-include="'partials/latest.html'" class="col-md-6 related-results"></div>
-    <div id="upcoming" ng-include="'partials/upcoming.html'" class="col-md-6 related-results"></div>
-</div>
+
 </body>
 </html>

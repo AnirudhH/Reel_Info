@@ -6,9 +6,8 @@
 </head>
 <body style="background-color: #74AFAD;" >
 <div  class="container-fluid" style="padding-top: 50px">
-
 <h1>Upcoming </h1>
-<div  ng-repeat="x in upcoming" class="panel card col-md-12" ng-mouseover="transition">
+<div  ng-repeat="x in upcoming" class="panel card col-md-8" ng-mouseover="transition">
 
     <img align="left" src={{'https://image.tmdb.org/t/p/w154'+x.poster_path}}>
     <b><i>{{x.title}}</i></b>
@@ -16,7 +15,7 @@
     <p>{{x.release_date}}</p>
     <p>{{x.popularity}}</p>
     <p>{{x.vote_count}}</p>
-    <span class="label label-primary">Rating :</span>&nbsp;{{x.vote_average}}<br> <br>
+    <span class="label label-primary">Rating :</span>&nbsp;<span class="label label-success">{{x.vote_average}}</span><br> <br>
     <a ng-href="https://www.youtube.com/results?search_query={{ x.title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
     </div>
         </div>
