@@ -24,12 +24,23 @@ body{
     padding-left: 15px;
 }
 .panel{
-    padding: 15px;
-
+    padding:15px;
+}
+.card:hover{
+    box-shadow: 0 5px 10px 10px rgba(168,182,191,.6);
+    transition: all 0.4s ease-in-out;
 }
 
 .search-bar {
     width:100%;
     max-width:250px;
     margin-top: 10px;
+}
+.transition-box{
+    box-shadow: 0 5px 10px 0 rgba(168,182,191,.6);
+    transition: all 0.4s ease-in-out;
+}
+img{
+   margin-right: 10px;
+    padding-bottom: 20px;
 }

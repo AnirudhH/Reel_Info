@@ -1,16 +1,24 @@
 /**
  * Created by Ani on 21-12-2016.
  */
-var MyFirstController = function($scope, $http, userData, footballTeam) {
+var MyFirstController = function($scope, $http, userData, movieData) {
     $scope.dat = userData.user;
 
-    var names= footballTeam.lookupUser();
-    names.then(function (data) {
-            $scope.names = data;
+    var popular= movieData.popular_movies();
+    popular.then(function (data) {
+            $scope.popular = data.results;
         });
-    var league= footballTeam.jello();
-      league.then(function (data) {
-            $scope.league = data;
+    var top= movieData.upcoming_movies();
+      top.then(function (data) {
+            $scope.upcoming = data.results;
         });
+    var latest = movieData.latest_movies();
+    latest.then(function (data) {
+        $scope.latests = data.results;
+    })
+    var single = movieData.movie_details();
+    single.then(function (data) {
+        $scope.single = data;
+    })
 };
 app.controller("MyFirstController", MyFirstController);

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+
+<div class="container-fluid" style="padding-top: 50px">
+        <h1> Latest Movies</h1>
+<div ng-repeat="x in latests" class="panel card col-md-12">
+    <img align="left" src={{'https://image.tmdb.org/t/p/w154'+x.poster_path}}>
+    <b><i>{{x.title}}</i></b>
+    <p>{{x.overview}}</p>
+    <p>{{x.release_date}}</p>
+    <p>{{x.popularity}}</p>
+    <p>{{x.vote_count}}</p>
+    <span class="label label-primary">Rating :</span>&nbsp;{{x.vote_average}}<br> <br>
+    <a ng-href="https://www.youtube.com/results?search_query={{ x.title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
+</div>
+</div>
+</body>
+</html>

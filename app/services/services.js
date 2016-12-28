@@ -1,6 +1,8 @@
 /**
  * Created by Ani on 21-12-2016.
  */
+var key = '5ff73eef6bd74a64f1ad9b5f606b2854';
+var uri = 'https://api.themoviedb.org/3/';
 app.factory('userData', function() {
 
     return {
@@ -16,50 +18,40 @@ app.factory('userData', function() {
 
 });
 
-app.factory('footballTeam', function($http) {
+app.factory('movieData', function($http) {
     return {
-        lookupUser: function () {
-          return   $http({
-                method: 'GET',
-                url: 'https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/premier-league/seasons/16-17/teams',
-                headers: {'X-Mashape-Key': 'zuB7h9FNEFmshebL2GJx7x5G627Lp1RumnbjsnPuI3JAcbbTv8'}
-            }).then(function (response) {
-                        console.log(response.data);
-                        // $scope.league = response.data;
-                        return response.data;
-                    });
-        },
-        jello: function () {
-           return  $http({
-                method: 'GET',
-                url: 'https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/premier-league/seasons/16-17/standings',
-                headers: {'X-Mashape-Key': 'zuB7h9FNEFmshebL2GJx7x5G627Lp1RumnbjsnPuI3JAcbbTv8'}
-            }).then(function (response) {
-                    console.log(response.data);
-                    return response.data;
-                });
-        },
-        jello: function () {
+        popular_movies: function () {
             return  $http({
                 method: 'GET',
-                url: 'https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/premier-league/seasons/16-17/standings',
-                headers: {'X-Mashape-Key': 'zuB7h9FNEFmshebL2GJx7x5G627Lp1RumnbjsnPuI3JAcbbTv8'}
-            }).then(function (response) {
+                url: 'https://api.themoviedb.org/3/movie/popular?api_key=' + key +'&language=en-US&page=1'}).then(function (response) {
+                console.log(response.data);
+                return response.data;
+            });
+        },
+        upcoming_movies: function () {
+            return  $http({
+                method: 'GET',
+                url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + key +'&language=en-US&page=1'}).then(function (response) {
+                console.log(response.data);
+                return response.data;
+            });
+        },
+        latest_movies: function () {
+            return  $http({
+                method: 'GET',
+                url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + key +'&language=en-US&page=1'}).then(function (response) {
+                console.log(response.data);
+                return response.data;
+            });
+        },
+        movie_details : function (id) {
+            return  $http({
+                method: 'GET',
+                url: 'https://api.themoviedb.org/3/movie/'+id+'?api_key=' + key +'&language=en-US'}).then(function (response) {
                 console.log(response.data);
                 return response.data;
             });
         }
     }
 });
-//
-// app.factory('footballTable', function($http,$scope) {
-//     this.jello = function () {
-//         $http.get({url : 'https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/premier-league/seasons/16-17/standings', headers: { 'X-Mashape-Key': 'zuB7h9FNEFmshebL2GJx7x5G627Lp1RumnbjsnPuI3JAcbbTv8'}})
-//                 .then(function(response) {
-//                     console.log(response);
-//                     $scope.table = response;
-//                     });
-//         }
-//     });
-
 

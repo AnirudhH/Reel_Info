@@ -6,7 +6,7 @@
     <title>AngularJS </title>
     <link rel="stylesheet" href="public/style.css">
     <link rel="stylesheet" href="public/bootstrap.css">
-    <script data-require="bootstrap@*" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
         document.write('<base href="' + document.location + '" />');
     </script>
@@ -30,14 +30,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand visible-xs" href="#">UI Bootstrap</a>
+                    <a class="navbar-brand visible-xs" href="#">Hollywood Reel Show</a>
                 </div>
                 <nav class="hidden-xs">
                     <ul class="nav navbar-nav">
                         <a href="#" role="button" class="navbar-brand">Home</a>
-                        <a href="#standings" class="navbar-brand">Table</a>
-                        <a href="#team-names" role="button" class="navbar-brand">Teams</a>
-                        <a href="#" role="button" class="navbar-brand">Fixtures</a>
+                        <a href="#popular" class="navbar-brand">Popular Movies</a>
+                        <a href="#latest" role="button" class="navbar-brand">Latest Movies</a>
+                        <a href="#upcoming" role="button" class="navbar-brand">Upcoming Movies</a>
                     </ul>
                     <div style="float: right;padding-top: 10px" >
                     <my-input/>
@@ -150,17 +150,25 @@
             against the metal, closed my eyes
             and listened.
     </div>
-        <div class="panel col-md-3" style="margin-left: 10px">
-            <!--<pre>{{user | json}}</pre>-->
-            <!--{{error}}-->
-        </div>
-
         <hr />
-    <div id="standings" ng-include="'partials/standings.html'" class="panel col-md-8 related-results"></div>
-        <div id="team-names" ng-include="'partials/team-names.html'" class="panel col-md-8 related-results"></div>
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default" ng-class="{'btn-success': hover.left, 'btn-danger': hover.right}" ng-click="setMatch(-1)" role="button" ng-mouseenter="hover.left = true;" ng-mouseleave="hover.left = false;">
+                <i class="fa fa-thumbs-o-up fa-5x pull-left" ng-class="{'fa-rotate-90': !hover.left && !hover.right, 'fa-flip-vertical': hover.right}"></i>
+                {{ song.name }}
+            </a>
+            <a class="btn btn-default" ng-class="{'btn-success': hover.right, 'btn-danger': hover.left}" ng-click="setMatch(1)" role="button" ng-mouseenter="hover.right = true;" ng-mouseleave="hover.right = false;">
+                <i class="fa fa-thumbs-o-up fa-5x pull-right" ng-class="{'fa-rotate-270': !hover.left && !hover.right, 'fa-flip-vertical': hover.left}"></i>
+                {{ match.name }}
+            </a>
         </div>
+    </div>
+
+
 </div>
 <!--<div id="related-results" ng-include="'partials/testing.html'" class="col-md-4 animated bounce related-results"></div>-->
+    <div id="popular" ng-include="'partials/popular.html'" class=" col-md-6 related-results"></div>
+    <div id="latest" ng-include="'partials/latest.html'" class="col-md-6 related-results"></div>
+    <div id="upcoming" ng-include="'partials/upcoming.html'" class="col-md-6 related-results"></div>
 </div>
 </body>
 </html>
