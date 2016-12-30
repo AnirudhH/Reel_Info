@@ -32,7 +32,7 @@ function routerConfig($stateProvider, $urlRouterProvider) {
         .state('detail', {
             url:'/movie/:id',
             templateUrl : 'partials/single-muvi.html',
-            controller : 'detailController({id :$state.params.id})'
+            controller : 'detailController'
         })
 
 }

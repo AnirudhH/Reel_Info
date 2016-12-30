@@ -5,6 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-<pre>{{details | json}}</pre>
+<div class="header large">
+    <div class="container-fluid animated bounce related-results" style="padding-top: 50px">
+
+
+            <img align="left" src={{'https://image.tmdb.org/t/p/w154'+details.poster_path}}>
+            <h2>{{details.title}}</h2>
+            <p>{{details.overview}}</p>
+            <p>{{details.release_date}}</p>
+            <p>{{details.popularity}}</p>
+            <p>{{details.vote_count}}</p>
+            <p>{{details.id}}</p>
+            <span class="label label-primary">Rating :</span>&nbsp;<span class="label label-success">{{details.vote_average}}</span><br> <br>
+            <a ng-href="https://www.youtube.com/results?search_query={{ details.title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
+            </div>
+        <div class="cast" ng-repeat="x in cast.cast | limitTo : 6">
+           <img style="float: left" class="img-circle" src={{'https://image.tmdb.org/t/p/w154'+x.profile_path}}><br>
+            <p>{{x.name}}</p>
+            <p>{{x.character}}</p>
+        </div>
+    </div>
 </body>
 </html>

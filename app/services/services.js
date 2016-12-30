@@ -50,6 +50,14 @@ app.factory('movieData', function($http) {
                 console.log(response.data);
                 return response.data;
             });
+        },
+        cast_details : function (id) {
+            return  $http({
+                method: 'GET',
+                url: 'https://api.themoviedb.org/3/movie/'+id+'/credits?api_key=' + key +'&language=en-US'}).then(function (response) {
+                console.log(response.data);
+                return response.data;
+            });
         }
     }
 });

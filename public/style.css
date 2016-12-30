@@ -26,6 +26,13 @@ body{
 .panel{
     padding:15px;
 }
+.panel a{
+    color: black;
+}
+.panel a:hover{
+    color: black;
+    text-decoration: none;
+}
 .card:hover{
     box-shadow: 0 5px 10px 10px rgba(168,182,191,.6);
     transition: all 0.4s ease-in-out;
@@ -43,4 +50,19 @@ body{
 img{
    margin-right: 10px;
     padding-bottom: 20px;
+}
+div.header.large {
+    border: none;
+}
+div.header.large {
+    background: linear-gradient(to bottom right, #4c5356, #8a7d72);
+}
+div.header.large {
+    padding-bottom: 60px;
+}
+.cast img{
+    width: 132px;
+    height: 132px;
+    border: 1px solid #ffffff;
+    padding-bottom: 0px;
 }
