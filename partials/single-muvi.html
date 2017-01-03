@@ -10,7 +10,8 @@
     <div class="container-fluid single-detail">
         <img align="left" src={{'https://image.tmdb.org/t/p/w300_and_h450_bestv2'+details.poster_path}}>
             <h2>{{details.title}} ({{details.release_date | date:'yyyy'}})</h2>
-            <p>{{details.overview}}</p>
+        <h4><b>Overview</b></h4>
+        <p>{{details.overview}}</p>
             <p>{{details.release_date}}</p>
             <p>{{details.popularity}}</p>
             <p>{{details.vote_count}}</p>
@@ -24,7 +25,7 @@
             <ol  class="people" >
                 <li ng-repeat="x in cast.cast | limitTo : 6">
            <img class="img-circle" src={{'https://image.tmdb.org/t/p/w132_and_h132_bestv2'+x.profile_path}}>
-            <p>{{x.name}}</p>
+                    <p><b>{{x.name}}</b></p>
             <p>{{x.character}}</p>
                 </li>
             </ol>

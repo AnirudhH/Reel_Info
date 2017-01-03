@@ -6,5 +6,6 @@ var upcomingController = function ($scope,movieData) {
     upcoming.then(function (data) {
         $scope.upcoming = data.results;
     });
+
 };
 app.controller ('upcomingController',upcomingController);

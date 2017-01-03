@@ -1,6 +1,9 @@
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 body{
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/bg-sky.png);
 }
+
 .header-placeholder {
   height: 50px;
 }
@@ -23,6 +26,11 @@ body{
   padding-left: 15px;
 }
 .panel{
+  img{
+    padding-top: 0px;
+  }
+  width: 500px;
+  float: left;
   a{
     color: black;
   }
@@ -31,6 +39,8 @@ body{
     text-decoration: none;
   }
   padding:15px;
+  margin-right: 100px;
+  margin-bottom: 30px;
 }
 .card:hover{
   box-shadow: 0 5px 10px 10px rgba(168,182,191,.6);
@@ -54,6 +64,7 @@ body{
     padding-bottom: 60px;
 }
 .cast{
+  color: #ffffff;
   display: block;
   padding-top: 40px;
   padding-left: 20px;
@@ -65,15 +76,17 @@ body{
     text-align: center;
     list-style-type :none;
     list-style-position: inside;
+
     img {
       width: 136px;
       height: 136px;
       border-radius: 50%;
       border: 2px solid #ffffff;
+      margin-bottom: 10px;
     }
   }
     margin: 30px 0 0 0;
-  padding: 0;
+    padding: 0;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -101,5 +114,10 @@ body{
   a{
     color: #ffffff;
   }
+  }
+}
+.container-fluid {
+  img{
+    padding-right: 10px;
   }
 }
