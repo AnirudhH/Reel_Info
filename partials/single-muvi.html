@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="public/bootstrap.css">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<div class="header large">
-    <div class="container-fluid animated bounce related-results" style="padding-top: 50px">
-
-
-            <img align="left" src={{'https://image.tmdb.org/t/p/w154'+details.poster_path}}>
-            <h2>{{details.title}}</h2>
+<div class="header">
+    <div class="container-fluid single-detail">
+        <img align="left" src={{'https://image.tmdb.org/t/p/w300_and_h450_bestv2'+details.poster_path}}>
+            <h2>{{details.title}} ({{details.release_date | date:'yyyy'}})</h2>
             <p>{{details.overview}}</p>
             <p>{{details.release_date}}</p>
             <p>{{details.popularity}}</p>
@@ -18,12 +17,18 @@
             <p>{{details.id}}</p>
             <span class="label label-primary">Rating :</span>&nbsp;<span class="label label-success">{{details.vote_average}}</span><br> <br>
             <a ng-href="https://www.youtube.com/results?search_query={{ details.title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
-            </div>
-        <div class="cast" ng-repeat="x in cast.cast | limitTo : 6">
-           <img style="float: left" class="img-circle" src={{'https://image.tmdb.org/t/p/w154'+x.profile_path}}><br>
+    </div>
+
+    <section class="cast">
+            <h3>Top Billed Cast</h3>
+            <ol  class="people" >
+                <li ng-repeat="x in cast.cast | limitTo : 6">
+           <img class="img-circle" src={{'https://image.tmdb.org/t/p/w132_and_h132_bestv2'+x.profile_path}}>
             <p>{{x.name}}</p>
             <p>{{x.character}}</p>
-        </div>
-    </div>
+                </li>
+            </ol>
+    </section>
+</div>
 </body>
 </html>

@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>AngularJS </title>
+    <title>Reel Info </title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link href="public/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="public/style.css">
-    <link rel="stylesheet" href="public/bootstrap.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
@@ -26,14 +27,14 @@
     <div class="navbar-header">
         <a class="navbar-brand" ui-sref="home">Reel Info</a>
     </div>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav ani">
         <li><a ui-sref="home">Home</a></li>
         <li><a ui-sref="popular">Popular</a></li>
         <li><a ui-sref="latest">Latest</a></li>
         <li><a ui-sref="upcoming">Upcoming </a></li>
     </ul>
 </nav>
-<div class="container">
+<div class="single-muvi container">
     <div  ui-view></div>
 </div>
 <!--<div id="related-results" ng-include="'partials/testing.html'" class="col-md-4 animated bounce related-results"></div>-->
