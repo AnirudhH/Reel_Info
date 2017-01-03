@@ -9,7 +9,7 @@
 <h1>Popular Movies</h1>
 <div  ng-repeat="x in popular" class="panel card" ng-mouseover="transition">
     <a ui-sref="detail({id : x.id})">
-    <img align="left" src={{'https://image.tmdb.org/t/p/w154'+x.poster_path}}>
+    <img align="left" ng-src={{'https://image.tmdb.org/t/p/w154'+x.poster_path}}>
     <b style="padding-top: 10px"><i>{{x.title}}</i></b>
     <p>{{x.overview| limitTo : 100}}{{x.overview.length > 50 ? '...' : ''}}</p>
         <span class="label label-danger">Release Date:</span> {{x.release_date |date:'dd-MM-yyyy'}}<br><br>
