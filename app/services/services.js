@@ -58,6 +58,14 @@ app.factory('movieData', function($http) {
                 console.log(response.data);
                 return response.data;
             });
+        },
+        search_movies : function (name) {
+            return  $http({
+                method: 'GET',
+                url: 'https://api.themoviedb.org/3/search/movie?api_key='+key + '&language=en-US&query='+ name + '&page=1&include_adult=false'}).then(function (response) {
+                console.log(response.data);
+                return response.data;
+            });
         }
     }
 });

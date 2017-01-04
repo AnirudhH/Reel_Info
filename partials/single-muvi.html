@@ -7,7 +7,12 @@
 <body>
 <div class="header">
     <div class="container-fluid single-detail">
-        <img align="left" ng-src={{'https://image.tmdb.org/t/p/w300_and_h450_bestv2'+details.poster_path}}>
+        <div class="image" ng-if = "details.poster_path == null">
+            <img style="height: 450px" align="left" ng-src='./public/images/noposter.png'>
+        </div>
+        <div class="image" ng-if = "details.poster_path != null">
+            <img align="left" ng-src={{'https://image.tmdb.org/t/p/w300_and_h450_bestv2'+x.poster_path}}>
+        </div>
             <h2>{{details.title}} ({{details.release_date | date:'yyyy'}})</h2>
         <h4><b>Overview</b></h4>
         <p>{{details.overview}}</p>
@@ -18,7 +23,10 @@
             <span class="label label-primary">Rating :</span>&nbsp;<span class="label label-success">{{details.vote_average}}</span><br> <br>
             <a ng-href="https://www.youtube.com/results?search_query={{ details.title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
     </div>
-
+    <div ng-if ="cast.cast.length == 0">
+        <h2 style="padding-left: 30px;color: #ffffff">Cast not available</h2>
+    </div>
+<div ng-if ="cast.cast.length != 0">
     <section class="cast">
             <h3>Top Billed Cast</h3>
             <ol  class="people" >
@@ -29,6 +37,7 @@
                 </li>
             </ol>
     </section>
+</div>
 </div>
 </body>
 </html>

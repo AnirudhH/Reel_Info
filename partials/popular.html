@@ -6,15 +6,22 @@
 </head>
 <body>
 <div class="container-fluid" style="padding-top: 50px">
-<h1>Popular Movies</h1>
+<h2>Popular Movies</h2>
 <div  ng-repeat="x in popular" class="panel card" ng-mouseover="transition">
     <a ui-sref="detail({id : x.id})">
-    <img align="left" ng-src={{'https://image.tmdb.org/t/p/w154'+x.poster_path}}>
+        <div class="image" ng-if = "x.poster_path == null">
+            <img style="height: 278px" align="left" ng-src='./public/images/noposter.png'>
+        </div>
+        <div class="image" ng-if = "x.poster_path != null">
+            <img align="left" ng-src={{'https://image.tmdb.org/t/p/w185_and_h278_bestv2'+x.poster_path}}>
+        </div>
+        <div class="mbody">
     <b style="padding-top: 10px"><i>{{x.title}}</i></b>
-    <p>{{x.overview| limitTo : 100}}{{x.overview.length > 50 ? '...' : ''}}</p>
+    <p>{{x.overview| limitTo : 140}}{{x.overview.length > 100 ? '...' : ''}}</p>
         <span class="label label-danger">Release Date:</span> {{x.release_date |date:'dd-MM-yyyy'}}<br><br>
     <span class="label label-primary">Rating :</span>&nbsp;<span class="label label-success">{{x.vote_average}}</span><br> <br>
     <a ng-href="https://www.youtube.com/results?search_query={{ x.title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
+        </div>
     </a>
 </div>
     <div ui-view></div>

@@ -34,5 +34,10 @@ function routerConfig($stateProvider, $urlRouterProvider) {
             templateUrl : 'partials/single-muvi.html',
             controller : 'detailController'
         })
+        .state('search_movie', {
+            url:'/search/:name',
+            templateUrl : 'partials/search-list.html',
+            controller : 'searchController'
+        })
 
 }

@@ -3,6 +3,6 @@
  */
 app.directive('myInput', function() {
     return {
-        template: "<label><input type='text' ng-model='teamname' placeholder='enter the team name'></label><button ng-click='getItems(teamname)'>GO</button>"
+        template: "<input type='text' class='search-muvi-text' ng-model='moviename' placeholder='enter the movie name' minlength='1' maxlength='10'><button class='go' ui-sref='search_movie({name : moviename})'>GO</button>"
     };
 });
