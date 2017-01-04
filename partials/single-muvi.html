@@ -11,7 +11,7 @@
             <img style="height: 450px" align="left" ng-src='./public/images/noposter.png'>
         </div>
         <div class="image" ng-if = "details.poster_path != null">
-            <img align="left" ng-src={{'https://image.tmdb.org/t/p/w300_and_h450_bestv2'+x.poster_path}}>
+            <img align="left" ng-src={{'https://image.tmdb.org/t/p/w300_and_h450_bestv2'+details.poster_path}}>
         </div>
             <h2>{{details.title}} ({{details.release_date | date:'yyyy'}})</h2>
         <h4><b>Overview</b></h4>
